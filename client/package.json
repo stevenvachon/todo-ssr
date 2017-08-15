@@ -1,0 +1,48 @@
+{
+  "private": true,
+  "name": "todo-ssr-client",
+  "description": "A progressively enhanced to-do application client.",
+  "version": "0.0.1",
+  "license": "MIT",
+  "author": "Steven Vachon <contact@svachon.com> (https://www.svachon.com/)",
+  "dependencies": {
+    "babel-polyfill": "^6.26.0",
+    "classnames": "^2.2.5",
+    "is-promise": "^2.1.0",
+    "prop-types": "^15.5.10",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "react-redux": "^5.0.6",
+    "react-router-dom": "^4.2.2",
+    "redux": "^3.7.2",
+    "redux-promise-middleware": "^4.4.1"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-plugin-transform-builtin-extend": "^1.1.2",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "chai": "^4.1.1",
+    "gzip-size-cli": "^2.0.0",
+    "karma": "^1.7.0",
+    "karma-chai": "~0.1.0",
+    "karma-mocha": "^1.3.0",
+    "mocha": "^3.5.0",
+    "npm-watch": "~0.2.0",
+    "webpack": "^3.5.5"
+  },
+  "scripts": {
+    "build": "webpack --display=errors-only && gzip-size dist/app.js",
+    "test": "karma start",
+    "watch": "npm-watch build"
+  },
+  "watch": {
+    "build": {
+      "inherit": true,
+      "patterns": "src/**/*.js"
+    }
+  }
+}
