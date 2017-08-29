@@ -1,2 +1,2 @@
-dist/*.map
+bundle/*.map
 node_modules/

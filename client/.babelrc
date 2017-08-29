@@ -1,0 +1,34 @@
+{
+  "env": {
+    "browser": {
+      "plugins": [
+        "transform-builtin-extend",
+        "transform-class-properties",
+        "transform-object-rest-spread"
+      ],
+      "presets": [
+        ["env", {
+          "targets": {
+            "browsers": "last 2 versions"
+          },
+          "useBuiltIns": true
+        }]
+      ]
+    },
+    "node": {
+      "plugins": [
+        "transform-class-properties",
+        "transform-object-rest-spread"
+      ],
+      "presets": [
+        ["env", {
+          "targets": {
+            "node": "current"
+          },
+          "useBuiltIns": true
+        }]
+      ]
+    }
+  },
+  "presets": ["react"]
+}

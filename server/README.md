@@ -28,19 +28,19 @@ npm install
 ```
 
 
-## Serving & Testing
+## Serving and Testing
 
-To start the development server:
+The server can be both built and started via:
 ```shell
 npm start
 ```
 
-To run the tests:
+The test suite can be ran manually via:
 ```shell
 npm test
 ```
 
-To run the tests on file changes:
+…or automatically as you make changes to files via:
 ```shell
 npm run watch
 ```
@@ -67,3 +67,9 @@ Advanced migrations will require using `knex` directly:
 ```js
 npx knex
 ```
+
+
+## FAQ
+
+1. **What's the difference between the `cjs` and `esm` directories?**<br>
+The former is a Node.js-compatible build of the latter. Do your development in `esm`.

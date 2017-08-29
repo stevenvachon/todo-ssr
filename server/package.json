@@ -5,9 +5,10 @@
   "version": "0.0.1",
   "license": "MIT",
   "author": "Steven Vachon <contact@svachon.com> (https://www.svachon.com/)",
-  "main": "src",
+  "main": "cjs",
   "dependencies": {
     "add-ender": "^1.0.0",
+    "babel-polyfill": "^6.26.0",
     "body-parser": "^1.17.2",
     "case-converter": "^1.0.1",
     "connect-session-knex": "^1.4.0",
@@ -21,10 +22,20 @@
     "morgan": "^1.8.2",
     "morgan-debug": "^2.0.0",
     "pg": "^7.2.0",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "react-redux": "^5.0.6",
+    "redux": "^3.7.2",
     "scrypt-for-humans": "^2.0.5",
+    "string-template": "^1.0.0",
     "todo-ssr-client": "file:../client"
   },
   "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "chai": "^4.1.1",
     "child-process-promise": "^2.2.1",
     "cross-env": "^5.0.5",
@@ -39,11 +50,13 @@
     "node": ">= 8"
   },
   "scripts": {
+    "build": "babel esm --out-dir=cjs --quiet",
     "check-updates": "ncu",
     "createdb": "node scripts/createdb",
     "dropdb": "node scripts/dropdb",
     "migrate-up": "knex migrate:latest",
-    "start": "cross-env DEBUG=todo node --require dotenv/config src/server",
+    "prestart": "npm run build --silent",
+    "start": "cross-env DEBUG=todo node --require dotenv/config cjs/server",
     "test": "nyc --reporter=text-summary mocha test/ --check-leaks --bail",
     "watch": "npm run test --silent -- --watch"
   }

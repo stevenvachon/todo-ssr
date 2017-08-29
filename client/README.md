@@ -16,9 +16,9 @@ npm install
 ```
 
 
-## Building & Testing
+## Building and Testing
 
-Builds can be performed manually via:
+A build can be performed manually via:
 ```shell
 npm run build
 ```
@@ -45,3 +45,9 @@ You can check to see if any dependencies have updates available with:
 ```shell
 npm run check-updates
 ```
+
+
+## FAQ
+
+1. **What's the difference between the `cjs` and `esm` directories?**<br>
+The former is a Node.js-compatible build of the latter. Do your development in `esm`.
